@@ -19,7 +19,7 @@ import { registerSchema } from "@/lib/schemas";
 import {SignInContainer, Card} from "@/components/form/styled";
 import {useHankoData} from "@/hooks/useHankoData";
 
-export const RegisterForm = ({createProfile}: any) => {
+export const RegisterForm = ({createProfile, profile}: any) => {
   const [snack, setSnack] = useState({open: false, type: 'success', message: ''});
   const {user} = useHankoData()
   const router = useRouter();
@@ -28,9 +28,9 @@ export const RegisterForm = ({createProfile}: any) => {
     resolver: zodResolver(registerSchema),
     mode: "onChange",
     defaultValues: {
-      email: "",
-      name: "",
-      address: "",
+      email: profile.email || "",
+      name: profile.name || "",
+      address: profile.address || "",
     },
   });
 

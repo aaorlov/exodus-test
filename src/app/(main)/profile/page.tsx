@@ -14,7 +14,7 @@ import Typography from "@mui/material/Typography";
 const ProfilePage = () => {
   const router = useRouter();
   const {hanko} = useHankoData();
-  const {createOrUpdateProfile} = useProfileStore()
+  const {createOrUpdateProfile, profile} = useProfileStore()
 
   const logout = async () => {
     try {
@@ -60,7 +60,7 @@ const ProfilePage = () => {
         sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}
       >
         <Toolbar />
-        <RegisterForm createProfile={createOrUpdateProfile}/>
+        <RegisterForm createProfile={createOrUpdateProfile} profile={profile}/>
       </Box>
     </Box>
   )
