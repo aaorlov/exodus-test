@@ -38,6 +38,13 @@ export const RegisterForm = ({createProfile, profile}: any) => {
     if(user?.email) setValue("email", user?.email);
   }, [setValue, user?.email]);
 
+  useEffect(() => {
+    if(profile) {
+      setValue("name", profile.name || '');
+      setValue("address", profile.address || '');
+    }
+  }, [profile]);
+
   const onSubmit = handleSubmit((values) => {
     console.log(values);
     startTransition(() => {
