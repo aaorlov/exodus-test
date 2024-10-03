@@ -28,9 +28,9 @@ export const RegisterForm = ({createProfile, profile}: any) => {
     resolver: zodResolver(registerSchema),
     mode: "onChange",
     defaultValues: {
-      email: profile.email || "",
-      name: profile.name || "",
-      address: profile.address || "",
+      email: profile?.email || "",
+      name: profile?.name || "",
+      address: profile?.address || "",
     },
   });
 
