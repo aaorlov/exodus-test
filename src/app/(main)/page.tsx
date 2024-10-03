@@ -188,14 +188,6 @@ const Home = () => {
                     <Typography variant="body2">{account.accountId}</Typography>
                   </Grid>
                 </Grid>
-                {/*<Grid container>*/}
-                {/*  <Grid item xs={6}>*/}
-                {/*    <Typography variant="body2"><strong>Persistent Account ID:</strong></Typography>*/}
-                {/*  </Grid>*/}
-                {/*  <Grid item xs={6}>*/}
-                {/*    <Typography variant="body2">{account.persistentAccountId}</Typography>*/}
-                {/*  </Grid>*/}
-                {/*</Grid>*/}
                 <Grid item xs={12}>
                   <Divider />
                 </Grid>
