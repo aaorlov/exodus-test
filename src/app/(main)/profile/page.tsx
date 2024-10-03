@@ -9,12 +9,17 @@ import {useRouter} from "next/navigation";
 import {LOGIN} from "@/constants/routes";
 import {useHankoData} from "@/hooks/useHankoData";
 import Typography from "@mui/material/Typography";
+import {useEffect} from "react";
 
 
 const ProfilePage = () => {
   const router = useRouter();
   const {hanko} = useHankoData();
-  const {createOrUpdateProfile, profile} = useProfileStore()
+  const {createOrUpdateProfile, getProfile, profile} = useProfileStore()
+
+  useEffect(() => {
+    getProfile()
+  }, []);
 
   const logout = async () => {
     try {
